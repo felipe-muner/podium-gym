@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Oswald, Mulish } from "next/font/google";
 import "./globals.css";
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
+// import { Footer } from "@/components/Footer";
+// import { Header } from "@/components/Header";
 
 const oswald = Oswald({
   variable: "--font-oswald",
@@ -32,9 +32,9 @@ export default function RootLayout({
       <body      
         className={`${oswald.variable} ${mulish.variable} antialiased bg-brand-background-2`}
       >
-        <Header /> 
+        {/* <Header />  */}
         {children}
-        <Footer /> 
+        {/* <Footer />  */}
       </body>
     </html>
   );
