@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="mt-10 flex flex-wrap justify-between pb-16 pt-10">
+    <footer className="mt-10 flex flex-wrap justify-between pb-16 pt-10 p-4 md:p-[32px]">
       <div className="flex basis-full justify-between gap-8 md:basis-auto md:flex-col md:justify-start">
         <Link href="#" className="flex items-center gap-3">
           <svg fill="none" viewBox="0 0 238 238" className="size-6 text-primary">
