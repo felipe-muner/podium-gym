@@ -1,7 +1,7 @@
 import { APP_NAME } from "@/constants";
 import Link from "next/link";
 
-export function Footer() {
+const Footer: React.FC = () => {
   return (
     <footer className="mt-10 flex flex-wrap justify-between pb-16 pt-10 p-4 md:p-[32px]">
       <div className="flex basis-full justify-between gap-8 md:basis-auto md:flex-col md:justify-start">
@@ -130,3 +130,6 @@ export function Footer() {
     </footer>
   );
 }
+
+
+export default Footer;
