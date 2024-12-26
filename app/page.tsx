@@ -1,3 +1,4 @@
+import { ContactData } from "@/components/ContactData";
 import { Gallery } from "@/components/Gallery";
 import Hero from "@/components/Hero/Hero";
 import { OurClasses } from "@/components/OurClasses";
@@ -16,6 +17,7 @@ export default function Home() {
         <OurPlan />
         <Gallery />
         <OurTeam />
+        <ContactData />
       </main>
   );
 }
