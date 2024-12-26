@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Oswald, Mulish } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/Header";
+import Header from "@/components/Header/Header";
+
 // import { Footer } from "@/components/Footer";
 
 const oswald = Oswald({
