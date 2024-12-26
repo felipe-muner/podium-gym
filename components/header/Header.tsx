@@ -5,7 +5,7 @@ import { MobileNavbar } from "./MobileNavbar";
 import { MobileNavItem } from "./MobileNavItem";
 import { APP_NAME } from "@/constants";
 
-export function Header() {
+const Header: React.FC = () => {
   return (
     <header className="flex items-center justify-between gap-10 p-4 md:p-[32px]">
       <Link href="/" className="flex items-center gap-3">
@@ -56,3 +56,5 @@ export function Header() {
     </header>
   );
 }
+
+export default Header;

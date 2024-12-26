@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Oswald, Mulish } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header/Header";
+import { Header } from "@/components/Header";
 
 const oswald = Oswald({
   variable: "--font-oswald",
