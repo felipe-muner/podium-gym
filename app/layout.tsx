@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Oswald, Mulish } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header/Header";
 import { Footer } from "@/components/footer/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const oswald = Oswald({
+  variable: "--font-oswald",
   subsets: ["latin"],
+  weight: ["400", "500", "700"], // Include desired font weights
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+// Muli Font
+const mulish = Mulish({
+  variable: "--font-mulish",
   subsets: ["latin"],
+  weight: ["400", "600"], // Include desired font weights
 });
 
 export const metadata: Metadata = {
@@ -27,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body      
-        className={`${geistSans.variable} ${geistMono.variable} antialiased p-4 md:p-[32px]`}
+        className={`${oswald.variable} ${mulish.variable} antialiased p-4 md:p-[32px]`}
       >
         <Header /> 
         {children}
