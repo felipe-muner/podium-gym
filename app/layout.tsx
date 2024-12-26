@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body      
-        className={`${oswald.variable} ${mulish.variable} antialiased`}
+        className={`${oswald.variable} ${mulish.variable} antialiased bg-brand-background-2`}
       >
         <Header /> 
         {children}
