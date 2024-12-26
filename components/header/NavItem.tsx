@@ -12,7 +12,7 @@ export function NavItem({ label, href, className }: NavItemProps) {
     <Link
       href={href}
       className={cn(
-        "flex cursor-pointer items-center font-medium text-muted-foreground transition-colors hover:text-foreground text-md tracking-[1px] uppercase",
+        "flex cursor-pointer items-center font-medium text-white transition-colors hover:text-brand-orange text-md tracking-[1px] uppercase",
         className,
       )}
     >

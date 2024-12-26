@@ -19,7 +19,7 @@ export function Header() {
             fill="currentColor"
           />
         </svg>
-        <span className="font-heading text-3xl font-bold">{APP_NAME}</span>
+        <span className="font-heading text-3xl font-bold text-white">{APP_NAME}</span>
       </Link>
       <div className="flex items-center gap-10">
         <nav className="hidden items-center gap-10 md:flex justify-end">
