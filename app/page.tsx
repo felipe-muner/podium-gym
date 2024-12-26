@@ -1,4 +1,9 @@
+import { Gallery } from "@/components/Gallery";
 import Hero from "@/components/Hero/Hero";
+import { OurClasses } from "@/components/OurClasses";
+import { OurPlan } from "@/components/OurPlan";
+import { OurTeam } from "@/components/OurTeam";
+import { Registration } from "@/components/Registration";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
 
 export default function Home() {
@@ -6,11 +11,11 @@ export default function Home() {
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Hero />
         <WhyChooseUs />
-        {/* <OurClasses />
+        <OurClasses />
         <Registration />
         <OurPlan />
         <Gallery />
-        <OurTeam /> */}
+        <OurTeam />
       </main>
   );
 }
