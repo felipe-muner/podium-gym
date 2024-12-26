@@ -1,16 +1,16 @@
-import WhyChooseUs from "@/components/why-choose-us/WhyChooseUs";
+import Hero from "@/components/Hero/Hero";
+import { WhyChooseUs } from "@/components/WhyChooseUs";
 
 export default function Home() {
   return (
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <h1 className="">main page</h1>
         <Hero />
         <WhyChooseUs />
-        <OurClasses />
+        {/* <OurClasses />
         <Registration />
         <OurPlan />
         <Gallery />
-        <OurTeam />
+        <OurTeam /> */}
       </main>
   );
 }
