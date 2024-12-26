@@ -3,6 +3,7 @@ import Link from "next/link";
 import { NavItem } from "./NavItem";
 import { MobileNavbar } from "./MobileNavbar";
 import { MobileNavItem } from "./MobileNavItem";
+import { APP_NAME } from "@/constants";
 
 export function Header() {
   return (
@@ -18,7 +19,7 @@ export function Header() {
             fill="currentColor"
           />
         </svg>
-        <span className="font-heading text-3xl font-bold">Reweb</span>
+        <span className="font-heading text-3xl font-bold">{APP_NAME}</span>
       </Link>
       <div className="flex items-center gap-10">
         <nav className="hidden items-center gap-10 md:flex justify-end">

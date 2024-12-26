@@ -1,3 +1,4 @@
+import { APP_NAME } from "@/constants";
 import Link from "next/link";
 
 export function Footer() {
@@ -15,7 +16,7 @@ export function Footer() {
               fill="currentColor"
             />
           </svg>
-          <span className="font-heading text-xl font-bold">Reweb</span>
+          <span className="font-heading text-xl font-bold">{APP_NAME}</span>
         </Link>
         <div className="flex items-center gap-5">
           <a href="#" className="text-muted-foreground hover:text-foreground">
@@ -91,7 +92,7 @@ export function Footer() {
         </Link>
       </div>
       <div className="mt-10 flex basis-1/2 flex-col gap-5 md:mt-0 md:basis-auto">
-        <h3 className="font-semibold">Resources</h3>
+        <h3 className="font-semibold">Tips & Guides</h3>
         <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
           Startup Program
         </Link>
