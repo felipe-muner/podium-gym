@@ -1,14 +1,11 @@
-// import Link from "next/link";
-
-// import { NavItem } from "./NavItem";
-// import { MobileNavbar } from "./MobileNavbar";
-// import { MobileNavItem } from "./MobileNavItem";
-// import { APP_NAME } from "@/constants";
+import React from "react";
 
 const Header: React.FC = () => {
   return (
-    <div>hello</div>
+    <section className="bg-brand-background-1 pb-[70px] pt-[100px] w-full">
+      Header
+    </section>
   );
-}
+};
 
 export default Header;

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Oswald, Mulish } from "next/font/google";
 import "./globals.css";
 import { Hero } from "@/components/Hero";
+import { Header } from "@/components/Header";
 
 // import { Footer } from "@/components/Footer";
 
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body      
         className={`${oswald.variable} ${mulish.variable} antialiased bg-brand-background-2`}
       >
+        <Header />
         <Hero />
         {children}
         {/* <Footer />  */}
