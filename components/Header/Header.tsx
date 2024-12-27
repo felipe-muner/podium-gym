@@ -7,7 +7,7 @@ import { APP_NAME } from "@/constants";
 
 const Header: React.FC = () => {
   return (
-    <header className="flex items-center justify-between gap-10 p-4 md:p-[32px]">
+    <header className="absolute top-0 left-0 z-50 flex w-full items-center justify-between gap-10 p-4 md:p-[32px]">
       <Link href="/" className="flex items-center gap-3">
         <svg fill="white" viewBox="0 0 238 238" className="size-6 text-primary">
           <path
@@ -38,7 +38,7 @@ const Header: React.FC = () => {
         </div> */}
       </div>
       <MobileNavbar>
-        <div className="rounded-b-lg bg-background py-4 text-foreground shadow-xl">
+        <div className="rounded-b-lg bg-background py-4 text-foreground shadow-xl z-50">
           <nav className="flex flex-col gap-1 pt-2">
             <MobileNavItem href="/" label="Home" />
             <MobileNavItem href="/about-us" label="About us" />
@@ -55,6 +55,6 @@ const Header: React.FC = () => {
       </MobileNavbar>
     </header>
   );
-}
+};
 
 export default Header;
