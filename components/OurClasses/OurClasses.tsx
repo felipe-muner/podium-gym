@@ -49,7 +49,7 @@ const OurClasses: React.FC = () => {
               className="relative bg-brand-background-1 rounded-lg shadow-lg overflow-hidden"
             >
               {/* Image */}
-              <div className="ci-pic">
+              <div>
                 <img
                   src={classItem.img}
                   alt={classItem.title}
@@ -68,7 +68,7 @@ const OurClasses: React.FC = () => {
                 <span className="text-brand-orange text-xs font-semibold uppercase font-mulish">
                   {classItem.category}
                 </span>
-                <h5 className="text-lg font-bold uppercase mt-2">{classItem.title}</h5>
+                <h5 className="text-xl font-bold uppercase mt-2">{classItem.title}</h5>
                 <a
                   href="#"
                   className="absolute bottom-6 right-6 w-12 h-12 flex items-center justify-center bg-[rgba(255,255,255,0.1)] hover:bg-brand-orange transition-colors duration-300"
