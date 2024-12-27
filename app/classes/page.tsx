@@ -1,7 +1,9 @@
+import { Breadcrumb } from "@/components/Breadcrumb";
+
 export default function Classes() {
   return (
-    <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-      <div>Classes page</div>
+    <main className="flex flex-col">
+      <Breadcrumb route={'Classes'} />      
     </main>
   );
 }

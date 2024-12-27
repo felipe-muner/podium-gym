@@ -6,7 +6,7 @@ import { WhyChooseUs } from "@/components/WhyChooseUs";
 
 export default function AboutUs() {
   return (
-    <main className="flex flex-col row-start-2 items-center sm:items-start">
+    <main className="flex flex-col">
       <Breadcrumb route={'About Us'} />
       <WhyChooseUs />
       <OurTeam />

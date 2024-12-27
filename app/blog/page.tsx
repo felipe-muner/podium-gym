@@ -1,7 +1,9 @@
-export default function Classes() {
+import { Breadcrumb } from "@/components/Breadcrumb";
+
+export default function AboutUs() {
   return (
-    <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-      <div>Blog page</div>
+    <main className="flex flex-col">
+      <Breadcrumb route={'Blog'} />      
     </main>
   );
 }
