@@ -1,29 +1,30 @@
 import { ChevronRight } from "lucide-react";
 import React from "react";
+import Image from "next/image";
 
 const classes = [
   {
-    img: "img/classes/class-1.jpg",
+    img: "/img/classes/class-1.jpg",
     category: "STRENGTH",
     title: "Weightlifting",
   },
   {
-    img: "img/classes/class-2.jpg",
+    img: "/img/classes/class-2.jpg",
     category: "Cardio",
     title: "Indoor cycling",
   },
   {
-    img: "img/classes/class-3.jpg",
+    img: "/img/classes/class-3.jpg",
     category: "STRENGTH",
     title: "Kettlebell power",
   },
   {
-    img: "img/classes/class-4.jpg",
+    img: "/img/classes/class-4.jpg",
     category: "Cardio",
     title: "Indoor cycling",
   },
   {
-    img: "img/classes/class-5.jpg",
+    img: "/img/classes/class-5.jpg",
     category: "Training",
     title: "Boxing",
   },
@@ -49,11 +50,13 @@ const OurClasses: React.FC = () => {
               className="relative bg-brand-background-1 rounded-lg shadow-lg overflow-hidden"
             >
               {/* Image */}
-              <div>
-                <img
+              <div className="relative w-full h-56">
+                <Image
                   src={classItem.img}
                   alt={classItem.title}
-                  className="w-full h-56 object-cover"
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-t-lg"
                 />
               </div>
 
