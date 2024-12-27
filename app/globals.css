@@ -63,7 +63,7 @@
     @apply border-border;
   }
   body {
-    font-family: var(--font-oswald), var(--font-mulish), Arial, Helvetica, sans-serif;
+    font-family: var(--font-oswald), Arial, Helvetica, sans-serif;
     @apply bg-background text-foreground;
   }
 }

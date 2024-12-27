@@ -9,6 +9,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        oswald: ['var(--font-oswald)', 'sans-serif'],
+        mulish: ['var(--font-mulish)', 'sans-serif'],
+      },
       colors: {
         brand: {
           black: '#000000',

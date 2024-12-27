@@ -22,7 +22,7 @@ const Header: React.FC = () => {
         <span className="font-heading text-3xl font-bold text-white">{APP_NAME}</span>
       </Link>
       <div className="flex items-center gap-10">
-        <nav className="hidden items-center gap-10 md:flex justify-end">
+        <nav className="hidden items-center gap-10 md:flex justify-end font-oswald">
           <NavItem href="/" label="Home" />
           <NavItem href="/about-us" label="About us" />
           <NavItem href="/classes" label="Classes" />
