@@ -1,3 +1,4 @@
+import { ChevronRight } from "lucide-react";
 import React from "react";
 
 const classes = [
@@ -30,18 +31,23 @@ const classes = [
 
 const OurClasses: React.FC = () => {
   return (
-    <section className="bg-brand-background-1 py-20 w-full">
+    <section className="bg-brand-background-2 py-20 w-full">
       <div className="container mx-auto px-4">
         {/* Section Title */}
         <div className="text-center mb-12">
-          <span className="text-brand-orange text-lg uppercase tracking-wide">Our Classes</span>
+          <span className="text-brand-orange text-lg font-bold uppercase tracking-wide">
+            Our Classes
+          </span>
           <h2 className="text-4xl font-bold text-white mt-2">WHAT WE CAN OFFER</h2>
         </div>
 
         {/* Classes Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {classes.map((classItem, index) => (
-            <div key={index} className="bg-white/10 rounded-lg overflow-hidden shadow-md">
+            <div
+              key={index}
+              className="relative bg-brand-background-1 rounded-lg shadow-lg overflow-hidden"
+            >
               {/* Image */}
               <div className="ci-pic">
                 <img
@@ -50,17 +56,24 @@ const OurClasses: React.FC = () => {
                   className="w-full h-56 object-cover"
                 />
               </div>
+
               {/* Text Content */}
-              <div className="ci-text p-4 text-center">
-                <span className="text-brand-orange text-sm font-semibold uppercase">
+              <div className="relative p-6 text-white bg-brand-background-1">
+                {/* Decorative Diagonal Border */}
+                <div
+                  className="absolute -top-10 left-0 w-[600px] h-[4px] bg-brand-gray-darkest rotate-[-5deg]"
+                  aria-hidden="true"
+                ></div>
+
+                <span className="text-brand-orange text-xs font-semibold uppercase font-mulish">
                   {classItem.category}
                 </span>
-                <h5 className="text-lg font-bold text-white mt-2">{classItem.title}</h5>
+                <h5 className="text-lg font-bold uppercase mt-2">{classItem.title}</h5>
                 <a
                   href="#"
-                  className="inline-block mt-4 text-brand-orange text-lg hover:scale-110 transition transform duration-200"
+                  className="absolute bottom-6 right-6 w-12 h-12 flex items-center justify-center bg-[rgba(255,255,255,0.1)] hover:bg-brand-orange transition-colors duration-300"
                 >
-                  <i className="fa fa-angle-right"></i>
+                  <ChevronRight className="text-white w-6 h-6" />
                 </a>
               </div>
             </div>
