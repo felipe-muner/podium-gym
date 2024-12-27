@@ -62,17 +62,22 @@ const OurClasses: React.FC = () => {
 
               {/* Text Content */}
               <div className="relative p-6 text-white bg-brand-background-1">
+                {/* Diagonal Background */}
+                <div className="absolute -top-11 -left-1 w-[600px] h-[100px] bg-[rgb(10,10,10)] border-t-4 border-brand-gray-darkest rotate-[-5deg] z-0"></div>
 
-                <span className="text-brand-orange text-xs font-semibold uppercase font-mulish">
-                  {classItem.category}
-                </span>
-                <h5 className="text-xl font-bold uppercase mt-2">{classItem.title}</h5>
-                <a
-                  href="#"
-                  className="absolute bottom-6 right-6 w-12 h-12 flex items-center justify-center bg-[rgba(255,255,255,0.1)] hover:bg-brand-orange transition-colors duration-300"
-                >
-                  <ChevronRight className="text-white w-6 h-6" />
-                </a>
+                {/* Text Content */}
+                <div className="relative z-10">
+                  <span className="text-brand-orange text-xs font-semibold uppercase font-mulish">
+                    {classItem.category}
+                  </span>
+                  <h5 className="text-xl font-bold uppercase mt-2">{classItem.title}</h5>
+                  <a
+                    href="#"
+                    className="absolute bottom-6 right-6 w-12 h-12 flex items-center justify-center bg-[rgba(255,255,255,0.1)] hover:bg-brand-orange transition-colors duration-300"
+                  >
+                    <ChevronRight className="text-white w-6 h-6" />
+                  </a>
+                </div>
               </div>
             </div>
           ))}
