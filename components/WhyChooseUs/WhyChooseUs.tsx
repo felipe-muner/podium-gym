@@ -12,35 +12,39 @@ const features: Feature[] = [
     icon: <Bike size={40} />,
     title: "Modern equipment",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut dolore facilisis.",
+      "Access state-of-the-art machines designed to maximize your performance and comfort.",
   },
   {
     icon: <Salad size={40} />,
     title: "Healthy nutrition plan",
     description:
-      "Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+      "Customized meal plans tailored to your goals, ensuring proper balance and nutrition.",
   },
   {
     icon: <Dumbbell size={40} />,
     title: "Professional training plan",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut dolore facilisis.",
+      "Expert-designed routines to help you achieve results efficiently and safely.",
   },
   {
     icon: <Heart size={40} />,
     title: "Unique to your needs",
     description:
-      "Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+      "Personalized programs created to match your fitness level, goals, and lifestyle.",
   },
 ];
 
 const FeatureCard: React.FC<Feature> = ({ icon, title, description }) => (
-  <div className="flex flex-col items-center text-center">
-    <div className="flex items-center justify-center h-[90px] w-[90px] bg-white/10 rounded-full text-brand-orange transition-all duration-300 hover:bg-brand-orange hover:text-white">
+  <div className="group flex flex-col items-center text-center">
+    <div className="flex items-center justify-center h-[90px] w-[90px] bg-white/10 rounded-full text-brand-orange transition-all duration-300 group-hover:bg-brand-orange group-hover:text-white">
       {icon}
     </div>
-    <h4 className="text-xl font-semibold text-white mt-6 mb-4">{title}</h4>
-    <p className="text-brand-gray-medium">{description}</p>
+    <h4 className="text-xl font-semibold text-white mt-6 mb-4">
+      {title}
+    </h4>
+    <p className="text-brand-gray-medium transition-colors duration-300 group-hover:text-white">
+      {description}
+    </p>
   </div>
 );
 
