@@ -4,6 +4,7 @@ import "./globals.css";
 import { Hero } from "@/components/Hero";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { APP_NAME } from "@/constants";
 
 // import { Footer } from "@/components/Footer";
 
@@ -21,8 +22,8 @@ const mulish = Mulish({
 });
 
 export const metadata: Metadata = {
-  title: "High Gym",
-  description: "Empower your fitness journey with High Gym.",
+  title: APP_NAME,
+  description: `Empower your fitness journey with ${APP_NAME}.`,
 };
 
 export default function RootLayout({
