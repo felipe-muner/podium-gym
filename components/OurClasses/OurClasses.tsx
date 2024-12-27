@@ -59,11 +59,6 @@ const OurClasses: React.FC = () => {
 
               {/* Text Content */}
               <div className="relative p-6 text-white bg-brand-background-1">
-                {/* Decorative Diagonal Border */}
-                <div
-                  className="absolute -top-10 left-0 w-[600px] h-[4px] bg-brand-gray-darkest rotate-[-5deg]"
-                  aria-hidden="true"
-                ></div>
 
                 <span className="text-brand-orange text-xs font-semibold uppercase font-mulish">
                   {classItem.category}
