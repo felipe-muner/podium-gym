@@ -1,3 +1,4 @@
+import { Facebook, Twitter, Youtube, Instagram, Mail, Heart } from "lucide-react";
 import { APP_NAME } from "@/constants";
 import Link from "next/link";
 import { ContactData } from "../ContactData";
@@ -21,19 +22,19 @@ const Footer: React.FC = () => {
               </p>
               <div className="flex space-x-4">
                 <a href="#" className="text-brand-gray-light text-sm">
-                  <i className="fa fa-facebook"></i>
+                  <Facebook size={16} />
                 </a>
                 <a href="#" className="text-brand-gray-light text-sm">
-                  <i className="fa fa-twitter"></i>
+                  <Twitter size={16} />
                 </a>
                 <a href="#" className="text-brand-gray-light text-sm">
-                  <i className="fa fa-youtube-play"></i>
+                  <Youtube size={16} />
                 </a>
                 <a href="#" className="text-brand-gray-light text-sm">
-                  <i className="fa fa-instagram"></i>
+                  <Instagram size={16} />
                 </a>
                 <a href="#" className="text-brand-gray-light text-sm">
-                  <i className="fa fa-envelope-o"></i>
+                  <Mail size={16} />
                 </a>
               </div>
             </div>
@@ -93,7 +94,7 @@ const Footer: React.FC = () => {
           {/* Copyright Section */}
           <div className="mt-12 border-t border-brand-gray-dark pt-6 text-center">
             <p className="text-sm text-brand-gray-light">
-              Copyright &copy; {new Date().getFullYear()} All rights reserved | This template is made with <i className="fa fa-heart text-brand-orange"></i> by <a href="https://colorlib.com" target="_blank" rel="noopener noreferrer" className="text-brand-orange">Colorlib</a>
+              Copyright &copy; {new Date().getFullYear()} All rights reserved | This template is made by <a href="https://felipemuner.com/portfolio" target="_blank" rel="noopener noreferrer" className="text-brand-orange">Felipe Muner</a>
             </p>
           </div>
         </div>
