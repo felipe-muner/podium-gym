@@ -1,6 +1,5 @@
-import { ContactData } from "@/components/ContactData";
 import { Gallery } from "@/components/Gallery";
-import Hero from "@/components/Hero/Hero";
+import { Hero } from "@/components/Hero";
 import { OurClasses } from "@/components/OurClasses";
 import { OurPlan } from "@/components/OurPlan";
 import { OurTeam } from "@/components/OurTeam";
@@ -16,8 +15,7 @@ export default function Home() {
         <Registration />
         <OurPlan />
         <Gallery />
-        <OurTeam />
-        <ContactData />
+        <OurTeam />        
       </main>
   );
 }
