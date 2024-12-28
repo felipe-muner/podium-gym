@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Youtube, Instagram, Mail, Heart } from "lucide-react";
+import { Facebook, Twitter, Youtube, Instagram, Mail } from "lucide-react";
 import { APP_NAME } from "@/constants";
 import Link from "next/link";
 import { ContactData } from "../ContactData";
@@ -71,9 +71,8 @@ const Footer: React.FC = () => {
                       Physical fitness may help prevent depression, anxiety
                     </a>
                   </h6>
-                  <ul className="flex space-x-6 text-xs text-brand-gray-darker">
+                  <ul className="text-xs text-brand-gray-darker">
                     <li>3 min read</li>
-                    <li>20 Comment</li>
                   </ul>
                 </div>
                 <div>
@@ -82,9 +81,8 @@ const Footer: React.FC = () => {
                       Fitness: The best exercise to lose belly fat and tone up...
                     </a>
                   </h6>
-                  <ul className="flex space-x-6 text-xs text-brand-gray-darker">
+                  <ul className="text-xs text-brand-gray-darker">
                     <li>3 min read</li>
-                    <li>20 Comment</li>
                   </ul>
                 </div>
               </div>
