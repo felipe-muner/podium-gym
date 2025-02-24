@@ -62,7 +62,7 @@ interface OurPlanProps {
   className?: string;
 }
 
-export default function OurPlan(props: OurPlanProps) {
+export default function TvOurPlan(props: OurPlanProps) {
   const p = { ...props };
 
   // Define the 6 plan types (rows)
@@ -81,13 +81,11 @@ export default function OurPlan(props: OurPlanProps) {
   );
 
   return (
-    <section className={cn("bg-brand-background-2 py-16", p.className)}>
-      <div className="container mx-auto px-4">
-        <TitleSection
-          title="Your membership, an investment in your health"
-          subtitle="Choose your plan"
-          className="pb-10"
-        />
+    <section className={cn("py-16", p.className)}>
+      <div className="px-4">
+        <h2 className="text-5xl font-bold text-white uppercase text-center mb-10 font-mulish">
+          Prices
+        </h2>
         <div className="overflow-x-auto mt-10">
           <table className="min-w-full border-collapse border border-brand-gray-light rounded-xl shadow-lg">
             <thead>
@@ -144,10 +142,10 @@ export default function OurPlan(props: OurPlanProps) {
             </tbody>
           </table>
           <div className="mt-4 space-y-2">
-            <p className="px-4 text-left text-gray-400">
+            <p className="px-4 text-left text-gray-400 font-mulish">
               * CrossFit 1, 3, 6 months & Fitness Classes 1-month = 500 ฿ / month for Gym, Steam & Ice-bath access - NOT valid for Open-gym only.
             </p>
-            <p className="px-4 text-left text-gray-400">
+            <p className="px-4 text-left text-gray-400 font-mulish">
               * Membership PAUSE = 1 month: 1, 3-month: 2, 6-month: 3, 12-month: 4. Duration: maximum 3 weeks per time.
             </p>
           </div>
