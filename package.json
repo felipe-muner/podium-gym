@@ -11,7 +11,12 @@
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
-    "db:seed": "tsx scripts/create-admin.ts"
+    "db:seed": "bun scripts/create-admin.ts",
+    "db:setup": "npm run db:push && npm run db:seed",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "docker:restart": "docker compose down && docker compose up -d && sleep 3 && npm run db:setup",
+    "docker:up:db": "docker compose up -d && sleep 3 && npm run db:push && npm run db:seed"
   },
   "dependencies": {
     "@auth/drizzle-adapter": "^1.10.0",
