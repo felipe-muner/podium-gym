@@ -100,7 +100,7 @@ export async function POST(request: NextRequest) {
       await db
         .update(members)
         .set({
-          remainingVisits: memberData.remainingVisits - 1,
+          remainingVisits: (memberData.remainingVisits || 0) - 1,
           updatedAt: new Date()
         })
         .where(eq(members.id, memberId))
