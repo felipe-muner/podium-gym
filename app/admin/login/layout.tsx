@@ -1,6 +1,6 @@
 import { AuthProvider } from '@/components/providers/auth-provider'
 
-export default async function AdminLayout({
+export default function LoginLayout({
   children,
 }: {
   children: React.ReactNode
