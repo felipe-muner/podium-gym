@@ -38,7 +38,7 @@ export default function AdminDashboard() {
           <CardContent>
             <div className="space-y-2">
               <Button asChild className="w-full">
-                <Link href="/admin/checkins">Today's Check-ins</Link>
+                <Link href="/admin/checkins">Today&apos;s Check-ins</Link>
               </Button>
               <Button asChild variant="outline" className="w-full">
                 <Link href="/admin/checkins/history">Check-in History</Link>
