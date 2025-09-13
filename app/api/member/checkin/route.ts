@@ -2,10 +2,11 @@ import { NextRequest, NextResponse } from 'next/server'
 import { db } from '@/lib/db'
 import { checkIns, members } from '@/lib/db/schema'
 import { eq, and, isNull } from 'drizzle-orm'
+import { type CheckInRequest, type CheckInResponse } from '@/lib/types'
 
 export async function POST(request: NextRequest) {
   try {
-    const { memberId, facilityType } = await request.json()
+    const { memberId, facilityType }: CheckInRequest = await request.json()
 
     if (!memberId || !facilityType) {
       return NextResponse.json(
