@@ -7,9 +7,22 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
+type Member = {
+  id: string
+  name: string
+  email: string | null
+  passportId: string | null
+  phone: string | null
+  planType: string
+  isActive: boolean
+  isPaused: boolean
+  remainingVisits: number | null
+  currentEndDate: string
+}
+
 export default function MemberPortal() {
   const [lookupData, setLookupData] = useState({ email: '', passportId: '' })
-  const [member, setMember] = useState(null)
+  const [member, setMember] = useState<Member | null>(null)
   const [isLoading, setIsLoading] = useState(false)
 
   const handleLookup = async () => {

@@ -119,7 +119,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       success: true,
       checkIn: checkIn[0],
-      remainingVisits: planType.includes('5pass') ? memberData.remainingVisits - 1 : null
+      remainingVisits: planType.includes('5pass') ? (memberData.remainingVisits || 0) - 1 : null
     })
   } catch (error) {
     console.error('Error during check-in:', error)

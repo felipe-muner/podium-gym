@@ -30,7 +30,7 @@ export async function GET(request: NextRequest) {
         eq(members.email, email),
         isNull(members.deletedAt)
       )
-    } else {
+    } else if (passportId) {
       whereCondition = and(
         eq(members.passportId, passportId),
         isNull(members.deletedAt)
