@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
     const membershipStatus = checkMembershipValidity({
       planType: memberData.planType,
       planDuration: memberData.planDuration,
-      currentEndDate: memberData.currentEndDate,
+      currentEndDate: memberData.currentEndDate.toISOString(),
       isActive: memberData.isActive,
       isPaused: memberData.isPaused,
       remainingVisits: memberData.remainingVisits,
