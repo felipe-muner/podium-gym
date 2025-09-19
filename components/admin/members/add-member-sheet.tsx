@@ -65,7 +65,7 @@ export function AddMemberSheet({ open, onOpenChange, onMemberAdded }: AddMemberS
         passportId: formData.passportId || null,
         phone: formData.phone || null,
         nationalityId: formData.nationalityId || null,
-        planType: planType as any,
+        planType: planType as 'gym_only' | 'gym_crossfit' | 'gym_5pass' | 'fitness_5pass' | 'crossfit_5pass',
         planDuration: duration ? Number(duration) : null,
         startDate: startDate.toISOString(),
         originalEndDate: endDate.toISOString(),
