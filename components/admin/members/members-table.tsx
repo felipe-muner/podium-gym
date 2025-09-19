@@ -114,7 +114,9 @@ export const MembersTable = forwardRef<MembersTableRef, MembersTableProps>(
           {badgeConfig.text}
         </Badge>
         {membershipStatus.reason && membershipStatus.daysRemaining <= 7 && membershipStatus.daysRemaining > 0 && (
-          <AlertTriangle className="h-4 w-4 text-orange-500" title={membershipStatus.reason} />
+          <div title={membershipStatus.reason}>
+            <AlertTriangle className="h-4 w-4 text-orange-500" />
+          </div>
         )}
       </div>
     )

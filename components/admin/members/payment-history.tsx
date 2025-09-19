@@ -33,7 +33,7 @@ interface PaymentHistoryProps {
 export function PaymentHistory({ memberId, memberName }: PaymentHistoryProps) {
   const [payments, setPayments] = useState<Payment[]>([])
   const [loading, setLoading] = useState(true)
-  const [showAddPayment] = useState(false)
+  // const [showAddPayment] = useState(false)
 
   useEffect(() => {
     fetchPayments()
