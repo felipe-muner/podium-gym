@@ -5,10 +5,10 @@ import { eq, and, isNull } from 'drizzle-orm'
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const memberId = params.id
+    const { id: memberId } = await params
 
     const member = await db
       .select()
@@ -35,10 +35,10 @@ export async function GET(
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const memberId = params.id
+    const { id: memberId } = await params
     const data = await request.json()
 
     const updatedMember = await db
@@ -82,10 +82,10 @@ export async function PUT(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const memberId = params.id
+    const { id: memberId } = await params
 
     const deletedMember = await db
       .update(members)

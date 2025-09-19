@@ -5,10 +5,10 @@ import { eq, desc, and, isNull } from 'drizzle-orm'
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const memberId = params.id
+    const { id: memberId } = await params
 
     // Verify member exists
     const member = await db
@@ -52,10 +52,10 @@ export async function GET(
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const memberId = params.id
+    const { id: memberId } = await params
     const data = await request.json()
 
     // Verify member exists
