@@ -19,6 +19,7 @@ import { PhoneInput } from '@/components/ui/phone-input'
 interface AddMemberSheetProps {
   open: boolean
   onOpenChange: (open: boolean) => void
+  onMemberAdded?: () => void
 }
 
 interface Nationality {
@@ -28,7 +29,7 @@ interface Nationality {
   flag: string
 }
 
-export function AddMemberSheet({ open, onOpenChange }: AddMemberSheetProps) {
+export function AddMemberSheet({ open, onOpenChange, onMemberAdded }: AddMemberSheetProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -39,19 +40,70 @@ export function AddMemberSheet({ open, onOpenChange }: AddMemberSheetProps) {
   })
   const [nationalities, setNationalities] = useState<Nationality[]>([])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // TODO: Implement member creation
-    console.log('Creating member:', formData)
-    onOpenChange(false)
-    setFormData({
-      name: '',
-      email: '',
-      passportId: '',
-      phone: '',
-      nationalityId: '',
-      plan: '',
-    })
+
+    try {
+      // Parse plan data
+      const [planType, duration] = formData.plan.includes('_')
+        ? formData.plan.split('_')
+        : [formData.plan, null]
+
+      // Calculate dates
+      const startDate = new Date()
+      const endDate = new Date(startDate)
+
+      if (duration && !isNaN(Number(duration))) {
+        endDate.setMonth(endDate.getMonth() + Number(duration))
+      } else if (planType.includes('5pass')) {
+        endDate.setMonth(endDate.getMonth() + 1) // 5-pass expires in 1 month
+      }
+
+      const memberData = {
+        name: formData.name,
+        email: formData.email || null,
+        passportId: formData.passportId || null,
+        phone: formData.phone || null,
+        nationalityId: formData.nationalityId || null,
+        planType: planType as any,
+        planDuration: duration ? Number(duration) : null,
+        startDate: startDate.toISOString(),
+        originalEndDate: endDate.toISOString(),
+        currentEndDate: endDate.toISOString(),
+        isActive: true,
+        isPaused: false,
+        pauseCount: 0,
+        remainingVisits: planType.includes('5pass') ? 5 : null,
+      }
+
+      const response = await fetch('/api/admin/members', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(memberData),
+      })
+
+      if (response.ok) {
+        console.log('Member created successfully')
+        onOpenChange(false)
+        setFormData({
+          name: '',
+          email: '',
+          passportId: '',
+          phone: '',
+          nationalityId: '',
+          plan: '',
+        })
+
+        // Trigger a refresh of the members list
+        onMemberAdded?.()
+      } else {
+        console.error('Failed to create member')
+      }
+    } catch (error) {
+      console.error('Error creating member:', error)
+    }
   }
 
   const handleInputChange = (field: string, value: string) => {
