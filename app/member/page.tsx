@@ -145,7 +145,7 @@ export default function MemberPortal() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                   <div>
                     <p className="font-medium text-gray-500">Plan Type</p>
-                    <p className="capitalize">{member.planType.replace('_', ' ')}</p>
+                    <p className="capitalize">{member.planType ? member.planType.replace('_', ' ') : 'No Plan'}</p>
                   </div>
                   <div>
                     <p className="font-medium text-gray-500">End Date</p>
