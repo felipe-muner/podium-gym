@@ -102,7 +102,9 @@ export function AddMemberSheet({ open, onOpenChange, onMemberAdded }: AddMemberS
         // Trigger a refresh of the members list
         onMemberAdded?.()
       } else {
-        console.error('Failed to create member')
+        const errorData = await response.text()
+        console.error('Failed to create member:', response.status, response.statusText, errorData)
+        alert(`Failed to create member: ${response.status} ${response.statusText}`)
       }
     } catch (error) {
       console.error('Error creating member:', error)
