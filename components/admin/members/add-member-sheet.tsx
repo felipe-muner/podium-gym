@@ -30,6 +30,7 @@ interface Nationality {
   flag: string
 }
 
+
 export function AddMemberSheet({ open, onOpenChange, onMemberAdded }: AddMemberSheetProps) {
   const [formData, setFormData] = useState({
     name: '',
@@ -43,19 +44,6 @@ export function AddMemberSheet({ open, onOpenChange, onMemberAdded }: AddMemberS
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-<<<<<<< HEAD
-    // TODO: Implement member creation
-    console.log('Creating member:', formData)
-    onOpenChange(false)
-    setFormData({
-      name: '',
-      email: '',
-      passportId: '',
-      phone: '',
-      nationalityId: '',
-      plan: '',
-    })
-=======
 
     try {
       // Get plan details from configuration
@@ -122,7 +110,6 @@ export function AddMemberSheet({ open, onOpenChange, onMemberAdded }: AddMemberS
     } catch (error) {
       console.error('Error creating member:', error)
     }
->>>>>>> 675a55288d6a244896156c4baae8a6a1a7a39ed1
   }
 
   const handleInputChange = (field: string, value: string) => {
@@ -159,114 +146,114 @@ export function AddMemberSheet({ open, onOpenChange, onMemberAdded }: AddMemberS
           </SheetHeader>
 
           <form onSubmit={handleSubmit} className="space-y-6 max-w-md mx-auto">
-            <div className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="name">Full Name *</Label>
-                <Input
-                  id="name"
-                  value={formData.name}
-                  onChange={(e) => handleInputChange('name', e.target.value)}
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => handleInputChange('email', e.target.value)}
-                />
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="passportId">Passport ID</Label>
-                <Input
-                  id="passportId"
-                  value={formData.passportId}
-                  onChange={(e) => handleInputChange('passportId', e.target.value)}
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="phone">Phone Number</Label>
-                <PhoneInput
-                  value={formData.phone}
-                  onChange={(value) => handleInputChange('phone', value)}
-                  placeholder="Enter phone number"
-                  defaultCountry="US"
-                  className="w-full"
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="nationality">Nationality</Label>
-                <Combobox
-                  options={nationalities.map(nationality => ({
-                    value: nationality.id,
-                    label: nationality.name,
-                    flag: nationality.flag
-                  }))}
-                  value={formData.nationalityId}
-                  onValueChange={(value) => handleInputChange('nationalityId', value)}
-                  placeholder="Select nationality..."
-                  searchPlaceholder="Search nationalities..."
-                  emptyText="No nationality found."
-                  className="w-full"
-                />
-              </div>
-            </div>
-
+          <div className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="plan">Plan & Duration</Label>
-              <Select value={formData.plan} onValueChange={(value) => handleInputChange('plan', value)}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select plan and duration (optional)" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Drop-in</SelectLabel>
-                    {planOptions.filter(p => p.id.includes('dropin')).map(plan => (
-                      <SelectItem key={plan.id} value={plan.id}>
-                        {plan.name} - {plan.price}
-                      </SelectItem>
-                    ))}
-                  </SelectGroup>
-                  <SelectGroup>
-                    <SelectLabel>5-Pass Options</SelectLabel>
-                    {planOptions.filter(p => p.visits && !p.id.includes('dropin')).map(plan => (
-                      <SelectItem key={plan.id} value={plan.id}>
-                        {plan.name} - {plan.price}
-                      </SelectItem>
-                    ))}
-                  </SelectGroup>
-                  <SelectGroup>
-                    <SelectLabel>Gym Monthly</SelectLabel>
-                    {planOptions.filter(p => p.type === 'gym_only' && p.duration && !p.id.includes('dropin')).map(plan => (
-                      <SelectItem key={plan.id} value={plan.id}>
-                        {plan.name} - {plan.price}
-                      </SelectItem>
-                    ))}
-                  </SelectGroup>
-                  <SelectGroup>
-                    <SelectLabel>Fitness Classes</SelectLabel>
-                    {planOptions.filter(p => p.id.includes('fitness') && p.duration).map(plan => (
-                      <SelectItem key={plan.id} value={plan.id}>
-                        {plan.name} - {plan.price}
-                      </SelectItem>
-                    ))}
-                  </SelectGroup>
-                  <SelectGroup>
-                    <SelectLabel>CrossFit</SelectLabel>
-                    {planOptions.filter(p => (p.id.includes('crossfit') || p.type === 'gym_crossfit') && p.duration).map(plan => (
-                      <SelectItem key={plan.id} value={plan.id}>
-                        {plan.name} - {plan.price}
-                      </SelectItem>
-                    ))}
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
+              <Label htmlFor="name">Full Name *</Label>
+              <Input
+                id="name"
+                value={formData.name}
+                onChange={(e) => handleInputChange('name', e.target.value)}
+                required
+              />
             </div>
+            <div className="space-y-2">
+              <Label htmlFor="email">Email</Label>
+              <Input
+                id="email"
+                type="email"
+                value={formData.email}
+                onChange={(e) => handleInputChange('email', e.target.value)}
+              />
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="passportId">Passport ID</Label>
+              <Input
+                id="passportId"
+                value={formData.passportId}
+                onChange={(e) => handleInputChange('passportId', e.target.value)}
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="phone">Phone Number</Label>
+              <PhoneInput
+                value={formData.phone}
+                onChange={(value) => handleInputChange('phone', value)}
+                placeholder="Enter phone number"
+                defaultCountry="US"
+                className="w-full"
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="nationality">Nationality</Label>
+              <Combobox
+                options={nationalities.map(nationality => ({
+                  value: nationality.id,
+                  label: nationality.name,
+                  flag: nationality.flag
+                }))}
+                value={formData.nationalityId}
+                onValueChange={(value) => handleInputChange('nationalityId', value)}
+                placeholder="Select nationality..."
+                searchPlaceholder="Search nationalities..."
+                emptyText="No nationality found."
+                className="w-full"
+              />
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="plan">Plan & Duration</Label>
+            <Select value={formData.plan} onValueChange={(value) => handleInputChange('plan', value)}>
+              <SelectTrigger>
+                <SelectValue placeholder="Select plan and duration (optional)" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectLabel>Drop-in</SelectLabel>
+                  {planOptions.filter(p => p.id.includes('dropin')).map(plan => (
+                    <SelectItem key={plan.id} value={plan.id}>
+                      {plan.name} - {plan.price}
+                    </SelectItem>
+                  ))}
+                </SelectGroup>
+                <SelectGroup>
+                  <SelectLabel>5-Pass Options</SelectLabel>
+                  {planOptions.filter(p => p.visits && !p.id.includes('dropin')).map(plan => (
+                    <SelectItem key={plan.id} value={plan.id}>
+                      {plan.name} - {plan.price}
+                    </SelectItem>
+                  ))}
+                </SelectGroup>
+                <SelectGroup>
+                  <SelectLabel>Gym Monthly</SelectLabel>
+                  {planOptions.filter(p => p.type === 'gym_only' && p.duration && !p.id.includes('dropin')).map(plan => (
+                    <SelectItem key={plan.id} value={plan.id}>
+                      {plan.name} - {plan.price}
+                    </SelectItem>
+                  ))}
+                </SelectGroup>
+                <SelectGroup>
+                  <SelectLabel>Fitness Classes</SelectLabel>
+                  {planOptions.filter(p => p.id.includes('fitness') && p.duration).map(plan => (
+                    <SelectItem key={plan.id} value={plan.id}>
+                      {plan.name} - {plan.price}
+                    </SelectItem>
+                  ))}
+                </SelectGroup>
+                <SelectGroup>
+                  <SelectLabel>CrossFit</SelectLabel>
+                  {planOptions.filter(p => (p.id.includes('crossfit') || p.type === 'gym_crossfit') && p.duration).map(plan => (
+                    <SelectItem key={plan.id} value={plan.id}>
+                      {plan.name} - {plan.price}
+                    </SelectItem>
+                  ))}
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+          </div>
 
             <SheetFooter className="pt-6 mt-8 border-t">
               <Button type="submit">Add Member</Button>
