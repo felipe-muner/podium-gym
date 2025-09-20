@@ -114,6 +114,13 @@ async function handleMemberCheckIn(
   }
 
   // Check facility access permissions
+  if (!member.planType) {
+    return NextResponse.json<CheckInResult>({
+      success: false,
+      message: 'No membership plan found. Please contact reception.'
+    })
+  }
+
   const hasAccess = checkFacilityAccess(member.planType, facilityType)
   if (!hasAccess) {
     return NextResponse.json<CheckInResult>({
