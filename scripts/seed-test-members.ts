@@ -64,7 +64,7 @@ async function seedTestMembers() {
         birthday: now, // Birthday today for testing birthday feature!
         planType: 'gym_only' as const, planDuration: 1, startDate: subDays(now, 15),
         originalEndDate: addDays(now, 15), currentEndDate: addDays(now, 15),
-        isActive: true, isPaused: false, payment: { amount: '50.00', method: 'card' as const as const }
+        isActive: true, isPaused: false, payment: { amount: '50.00', method: 'card' as const }
       },
 
       // 2. Active gym-only 3 months (PAID)

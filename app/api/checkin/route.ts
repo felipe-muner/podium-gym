@@ -210,7 +210,7 @@ async function handleMemberCheckIn(
     memberInfo: {
       name: member.name,
       planType: member.planType,
-      expiresAt: member.currentEndDate
+      expiresAt: member.currentEndDate.toISOString()
     }
   })
 }
