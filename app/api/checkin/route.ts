@@ -131,7 +131,7 @@ async function handleMemberCheckIn(
 
   // For pass-based plans, check remaining visits
   if (member.planType.includes('5pass')) {
-    if (!member.remainingVisits || member.remainingVisits <= 0) {
+    if (member.remainingVisits === null || member.remainingVisits === undefined || member.remainingVisits <= 0) {
       return NextResponse.json<CheckInResult>({
         success: false,
         message: `No remaining visits on your ${member.planType} pass. Please purchase a new pass.`
