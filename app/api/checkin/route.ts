@@ -179,7 +179,7 @@ async function handleMemberCheckIn(
           name: member.name,
           planType: member.planType,
           remainingVisits: member.remainingVisits - 1,
-          expiresAt: member.currentEndDate
+          expiresAt: member.currentEndDate.toISOString()
         }
       })
     } else {
@@ -190,7 +190,7 @@ async function handleMemberCheckIn(
           name: member.name,
           planType: member.planType,
           remainingVisits: member.remainingVisits,
-          expiresAt: member.currentEndDate
+          expiresAt: member.currentEndDate.toISOString()
         }
       })
     }
