@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { db } from '@/lib/db'
 import { members, checkIns, dayPasses } from '@/lib/db/schema'
-import { eq, and, gte, lt, desc, or } from 'drizzle-orm'
-import { startOfDay, endOfDay, isAfter, isBefore } from 'date-fns'
-import { type InferInsertModel } from 'drizzle-orm'
+import { eq, and, gte, lt, or } from 'drizzle-orm'
+import { startOfDay, endOfDay, isBefore } from 'date-fns'
+import { type Member, type DayPass, type NewCheckIn } from '@/lib/types/database'
 
 type CheckInResult = {
   success: boolean
@@ -82,8 +82,8 @@ export async function POST(request: NextRequest) {
 }
 
 async function handleMemberCheckIn(
-  member: any,
-  facilityType: string,
+  member: Member,
+  facilityType: 'gym' | 'crossfit' | 'fitness_class',
   now: Date,
   todayStart: Date,
   todayEnd: Date
@@ -151,11 +151,12 @@ async function handleMemberCheckIn(
     }
 
     // Record check-in
-    await db.insert(checkIns).values({
+    const checkInData: NewCheckIn = {
       memberId: member.id,
-      facilityType: facilityType as any,
+      facilityType: facilityType,
       checkInTime: now
-    })
+    }
+    await db.insert(checkIns).values(checkInData)
 
     // Update remaining visits if this is first check-in today
     if (shouldDeductVisit) {
@@ -189,11 +190,12 @@ async function handleMemberCheckIn(
   }
 
   // For monthly memberships, just record check-in
-  await db.insert(checkIns).values({
+  const checkInData: NewCheckIn = {
     memberId: member.id,
-    facilityType: facilityType as any,
+    facilityType: facilityType,
     checkInTime: now
-  })
+  }
+  await db.insert(checkIns).values(checkInData)
 
   return NextResponse.json<CheckInResult>({
     success: true,
@@ -207,8 +209,8 @@ async function handleMemberCheckIn(
 }
 
 async function handleDayPassCheckIn(
-  dayPass: any,
-  facilityType: string,
+  dayPass: DayPass,
+  facilityType: 'gym' | 'crossfit' | 'fitness_class',
   now: Date
 ): Promise<NextResponse<CheckInResult>> {
   // Check if day pass matches facility type

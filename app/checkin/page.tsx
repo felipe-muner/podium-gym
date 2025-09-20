@@ -58,7 +58,7 @@ export default function CheckInPage() {
       if (data.success) {
         setIdentifier('')
       }
-    } catch (error) {
+    } catch {
       setResult({
         success: false,
         message: 'Network error. Please try again or contact reception.'
@@ -113,7 +113,7 @@ export default function CheckInPage() {
                     <button
                       key={facility.value}
                       type="button"
-                      onClick={() => setFacilityType(facility.value as any)}
+                      onClick={() => setFacilityType(facility.value as 'gym' | 'crossfit' | 'fitness_class')}
                       className={cn(
                         "px-3 py-2 text-sm rounded-md border transition-colors",
                         facilityType === facility.value
