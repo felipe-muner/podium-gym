@@ -1,17 +1,60 @@
 # Podium Gym Management System
 
-A comprehensive gym and CrossFit management system built with Next.js 15, Drizzle ORM, and NextAuth.js.
+A comprehensive gym and CrossFit management system built with Next.js 15, Drizzle ORM, and NextAuth.js featuring advanced revenue sharing, flexible membership plans, and intelligent check-in validation.
 
 ## 🚀 Features
 
-- **Member Management**: Complete CRUD operations for gym/CrossFit members
-- **Plan Types**: Gym-only, combo plans, 5-pass systems
-- **Check-in System**: Track member visits and facility usage
-- **Day Pass Sales**: Walk-in customer management
-- **Revenue Tracking**: Automated revenue splitting for combo plans (80% CrossFit, 20% Gym)
-- **Role-based Access**: Owner, Manager, Staff permissions
-- **Shop Management**: Inventory and POS system
-- **Membership Pausing**: Flexible pause/resume functionality
+### 👥 Member Management
+- Complete CRUD operations for gym/CrossFit members with nationality tracking
+- Advanced member profiles with passport ID, birthday tracking, and contact information
+- Member birthday dashboard with age calculations and celebration reminders
+- Comprehensive member search and filtering capabilities
+
+### 📋 Membership Plans & Pricing
+- **Unlimited Plans**: 1, 3, 6, 12-month memberships for gym, CrossFit, and combo access
+- **Visit-Based Plans**: 5-pass and 10-pass systems with intelligent visit tracking
+- **Day Passes**: Single-visit access for walk-in customers
+- **Thai National Discounts**: Special pricing for Thai nationals on all plans
+- **Combo Plans**: Mixed gym/CrossFit access with automated revenue splitting
+
+### ✅ Smart Check-in System
+- Email or passport ID validation for member access
+- **Visit Tracking Rules**:
+  - Same-day re-entry doesn&apos;t deduct additional visits for pass plans
+  - Automatic visit countdown for 5-pass/10-pass memberships
+  - Real-time membership status validation (active/expired/paused)
+- Day pass integration with facility-specific access control
+- Recent check-ins dashboard with detailed member information
+
+### 💰 Advanced Payment & Revenue Sharing
+- **Automated Revenue Splitting**:
+  - Gym-only plans: 100% to gym
+  - Combo plans: Configurable percentage splits (default 80% CrossFit, 20% Gym)
+  - CrossFit plans: 100% to CrossFit
+- Payment history tracking with share amount calculations
+- Multiple payment methods (cash/card) support
+- Thai national discount application
+
+### 📊 Reports & Analytics
+- Comprehensive income reports with date range filtering
+- Revenue breakdown by facility (gym vs CrossFit)
+- Transaction analysis with growth comparisons
+- Daily revenue tracking with facility-specific insights
+- Detailed transaction logs with member information
+
+### 🔐 Role-Based Access Control
+- **Admin Role**: Full system access including user management, reports, and all features
+- **Staff Role**: Reception-focused access (members, check-ins, birthdays, limited features)
+- Secure authentication via Google OAuth with email whitelist validation
+
+### ⏸️ Membership Management
+- **Membership Pausing**:
+  - Maximum 90 days per pause period
+  - Maximum 2 pause periods per membership
+  - Accurate day calculation for remaining membership time
+  - Visit-based plans (5-pass/10-pass) cannot be paused
+- Membership activation/deactivation controls
+- End date management with pause period extensions
 
 ## 🛠️ Tech Stack
 
@@ -73,38 +116,74 @@ A comprehensive gym and CrossFit management system built with Next.js 15, Drizzl
 ## 📁 Project Structure
 
 ```
-├── app/                    # Next.js App Router
-│   ├── admin/             # Admin dashboard pages
-│   │   ├── login/         # Authentication
-│   │   ├── members/       # Member management
-│   │   └── layout.tsx     # Admin layout with auth
-│   └── api/auth/          # NextAuth API routes
-├── components/            # Reusable components
-│   ├── admin/            # Admin-specific components
-│   ├── providers/        # Context providers
-│   └── ui/              # shadcn/ui components
-├── lib/                  # Utilities
-│   ├── auth.ts          # NextAuth configuration
-│   └── db/              # Database setup
-│       ├── index.ts     # Database connection
-│       └── schema.ts    # Drizzle schema
-├── scripts/             # Database scripts
-└── types/              # TypeScript definitions
+├── app/                           # Next.js App Router
+│   ├── admin/                    # Admin dashboard
+│   │   ├── (dashboard)/         # Protected dashboard routes
+│   │   │   ├── members/         # Member management (CRUD, profiles)
+│   │   │   ├── checkin/         # Check-in validation system
+│   │   │   ├── birthdays/       # Birthday tracking dashboard
+│   │   │   ├── reports/         # Revenue reports & analytics
+│   │   │   ├── plans/           # Membership plan management
+│   │   │   ├── users/           # Admin user management
+│   │   │   └── dashboard/       # Main dashboard
+│   │   ├── login/               # Authentication pages
+│   │   └── layout.tsx           # Admin layout with auth
+│   └── api/                     # API routes
+│       ├── admin/               # Admin-specific endpoints
+│       │   ├── members/         # Member CRUD & payments
+│       │   ├── reports/         # Financial reporting
+│       │   ├── users/           # User management
+│       │   └── recent-checkins/ # Check-in history
+│       ├── checkin/             # Public check-in validation
+│       └── auth/                # NextAuth routes
+├── components/                   # Reusable components
+│   ├── admin/                   # Admin dashboard components
+│   │   ├── members/             # Member tables, forms, profiles
+│   │   ├── plans/               # Plan management components
+│   │   ├── users/               # User management components
+│   │   └── sidebar.tsx          # Navigation sidebar
+│   ├── providers/               # Context providers
+│   └── ui/                      # shadcn/ui components
+├── lib/                         # Utilities & configuration
+│   ├── auth.ts                  # NextAuth configuration
+│   ├── db/                      # Database setup
+│   │   ├── index.ts             # Database connection
+│   │   └── schema.ts            # Drizzle schema definitions
+│   └── types/                   # TypeScript definitions
+│       └── database.ts          # Database type exports
+├── scripts/                     # Database & utility scripts
+│   ├── seed-*.ts               # Data seeding scripts
+│   ├── add-single-user.ts      # User creation utility
+│   └── create-admin.ts         # Admin user creation
+└── tests/                      # Test suites
+    ├── e2e/                    # End-to-end tests
+    └── unit/                   # Unit tests
 ```
 
 ## 🗃️ Database Schema
 
-### Core Tables
-- **members**: Customer information and membership details
-- **admin_users**: System users with role-based access
-- **membership_pauses**: Track membership suspensions
-- **check_ins**: Facility usage tracking
-- **day_passes**: Walk-in customer passes
-- **payments**: Revenue tracking with automatic splits
-- **shop_items** & **shop_sales**: Inventory management
+### Core Business Tables
+- **`members`**: Customer profiles with passport ID, nationality, plan details, and membership status
+- **`plans`**: Configurable membership plans with pricing, duration, visit limits, and revenue share percentages
+- **`payments`**: Payment records with automatic gym/CrossFit share amount calculations
+- **`check_ins`**: Facility usage tracking with timestamp and facility type
+- **`membership_pauses`**: Pause history with duration limits and admin attribution
+- **`day_passes`**: Walk-in customer single-visit passes
+- **`nationalities`**: Country reference data with flags for member profiles
 
-### Authentication Tables
-- Standard NextAuth.js tables for session management
+### Admin & Access Control
+- **`admin_users`**: System users with role-based permissions (admin/staff)
+- **`users`**, **`accounts`**, **`sessions`**: NextAuth.js authentication tables
+
+### Commerce (Future)
+- **`shop_items`** & **`shop_sales`**: Inventory and point-of-sale system
+
+### Key Schema Features
+- **Soft deletes**: `deletedAt` timestamp on all tables
+- **Audit trails**: `createdAt` and `updatedAt` timestamps
+- **Flexible plan types**: Extensible enum system for membership plans
+- **Revenue sharing**: Built-in percentage calculations for combo plans
+- **Visit tracking**: `usedVisits` counter for pass-based memberships
 
 ## 🔐 Authentication Flow
 
@@ -113,33 +192,84 @@ A comprehensive gym and CrossFit management system built with Next.js 15, Drizzl
 3. Email validation against `admin_users` table
 4. Role-based dashboard access
 
-## 👥 User Roles
+## 👥 User Roles & Permissions
 
-| Role | Permissions |
-|------|-------------|
-| **Owner** | Full system access, user management |
-| **Manager** | All operations except user management |
-| **Staff** | Reception duties only (members, check-ins, day passes) |
+| Role | Dashboard | Members | Check-ins | Birthdays | Reports | Plans | Admin Users | Shop |
+|------|-----------|---------|-----------|-----------|---------|--------|-------------|------|
+| **Admin** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Staff** | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
 
-## 💳 Pricing Structure
+### Role Descriptions
+- **Admin**: Full system access including user management, financial reports, plan configuration, and shop management
+- **Staff**: Reception-focused access for day-to-day operations (member management, check-ins, birthday tracking)
 
-### Memberships
-- **Gym/Steam/Ice-bath**: 1,900฿ (1mo) to 16,000฿ (12mo)
-- **Fitness Classes**: 2,800฿ (1mo)
-- **Group Training**: 4,200฿ (1mo) to 21,600฿ (6mo)
-- **Open-Gym**: 3,000฿ (1mo)
-- **Combo Plans**: 5,000฿ (1mo) to 25,800฿ (6mo)
+## 💳 Membership Plans & Pricing Structure
 
-### Day Passes
-- **Gym**: 300฿
-- **Fitness Class**: 300฿  
-- **CrossFit**: 600฿
-- **Open-Gym**: 450฿
+### 🏋️ Gym-Only Memberships
+| Duration | Regular Price | Thai Discount | Plan Type |
+|----------|---------------|---------------|-----------|
+| 1 Month | 1,900฿ | 1,600฿ | `gym_only_1month` |
+| 3 Months | 5,200฿ | 4,400฿ | `gym_only_3month` |
+| 6 Months | 9,600฿ | 8,200฿ | `gym_only_6month` |
+| 12 Months | 16,000฿ | 14,000฿ | `gym_only_12month` |
+| 5-Pass | 1,250฿ | 1,100฿ | `gym_5pass` |
+| Drop-in | 300฿ | 250฿ | `gym_only_dropin` |
 
-### 5-Pass Plans
-- **Gym/Fitness**: 1,250฿
-- **CrossFit**: 2,250฿
-- Valid for 1 month, non-shareable
+### 🥊 CrossFit Memberships
+| Duration | Regular Price | Thai Discount | Plan Type |
+|----------|---------------|---------------|-----------|
+| 1 Month | 4,200฿ | 3,600฿ | `crossfit_1month` |
+| 3 Months | 11,400฿ | 9,600฿ | `crossfit_3month` |
+| 10-Pass | 3,500฿ | 3,000฿ | `crossfit_10pass` |
+| Drop-in | 600฿ | 500฿ | `crossfit_dropin` |
+
+### 🤸 Fitness Classes
+| Duration | Regular Price | Thai Discount | Plan Type |
+|----------|---------------|---------------|-----------|
+| 1 Month | 2,800฿ | 2,400฿ | `fitness_1month` |
+| 5-Pass | 1,250฿ | 1,100฿ | `fitness_5pass` |
+| Drop-in | 300฿ | 250฿ | `fitness_dropin` |
+
+### 🏋️‍♀️ Open Gym
+| Duration | Regular Price | Thai Discount | Plan Type |
+|----------|---------------|---------------|-----------|
+| 1 Month | 3,000฿ | 2,600฿ | `open_gym_1month` |
+| 5-Pass | 1,350฿ | 1,200฿ | `open_gym_5pass` |
+| Drop-in | 450฿ | 400฿ | `open_gym_dropin` |
+
+### 🔥 Combo Plans (Gym + CrossFit/Fitness)
+| Plan | Duration | Regular Price | Thai Discount | Revenue Split | Plan Type |
+|------|----------|---------------|---------------|---------------|-----------|
+| Fitness + Gym | 1 Month | 4,000฿ | 3,400฿ | 60% Gym, 40% Fitness | `fitness_gym_1month` |
+| Group Classes | 1 Month | 4,200฿ | 3,600฿ | 20% Gym, 80% CrossFit | `group_classes_1month` |
+| Group Classes | 3 Months | 11,400฿ | 9,600฿ | 20% Gym, 80% CrossFit | `group_classes_3month` |
+| Open Gym Combo | 1 Month | 5,000฿ | 4,400฿ | 60% Gym, 40% Open Gym | `open_gym_combo_1month` |
+
+## 🎯 Check-in System Rules
+
+### Visit Tracking Logic
+- **Time-based Plans**: Unlimited check-ins during membership period
+- **Visit-based Plans**:
+  - 5-pass plans: 5 visits maximum
+  - 10-pass plans: 10 visits maximum
+  - **Same-day re-entry rule**: Multiple check-ins on the same day only count as 1 visit
+- **Day Passes**: Single-use, facility-specific access
+
+### Membership Status Validation
+| Status | Check-in Allowed | Message |
+|--------|------------------|---------|
+| **Active** | ✅ | Welcome message with remaining time/visits |
+| **Expired** | ❌ | Membership expired, payment required |
+| **Paused** | ❌ | Contact reception to resume membership |
+| **Inactive** | ❌ | Contact reception to reactivate |
+
+### Facility Access Rules
+| Pass Type | Gym | CrossFit | Fitness Class |
+|-----------|-----|----------|---------------|
+| `gym_only_dropin` | ✅ | ❌ | ❌ |
+| `crossfit_dropin` | ❌ | ✅ | ❌ |
+| `fitness_dropin` | ❌ | ❌ | ✅ |
+| `open_gym` | ✅ | ❌ | ❌ |
 
 ## 🔧 Available Scripts
 
@@ -181,18 +311,42 @@ npm run db:seed      # Create initial admin user
 - AI-assisted code reviews
 - Responds to `@claude` mentions in issues/PRs
 
-## 📊 Business Logic
+## 📊 Revenue Sharing System
 
-### Revenue Splitting
-- **Gym-only plans**: 100% to gym
-- **Combo plans**: 80% CrossFit, 20% gym
-- **Shop sales**: 100% to gym
+The system automatically calculates and tracks revenue sharing based on plan configuration:
 
-### Membership Pausing
-- Maximum 90 days per pause
-- Maximum 2 pauses per membership
-- 5-pass plans cannot be paused
-- Accurate day calculation for remaining time
+### Revenue Split Logic
+```
+Payment Amount × Plan Share Percentage = Facility Share Amount
+```
+
+### Default Revenue Splits
+| Plan Category | Gym Share | CrossFit Share |
+|---------------|-----------|----------------|
+| **Gym Plans** | 100% | 0% |
+| **CrossFit Plans** | 0% | 100% |
+| **Fitness Plans** | 0% | 100% |
+| **Combo Plans** | 20% | 80% |
+| **Shop Sales** | 100% | 0% |
+
+### Share Calculation Examples
+- **Gym 1-Month (1,900฿)**: Gym = 1,900฿, CrossFit = 0฿
+- **Group Classes 1-Month (4,200฿)**: Gym = 840฿ (20%), CrossFit = 3,360฿ (80%)
+- **Fitness + Gym Combo (4,000฿)**: Gym = 2,400฿ (60%), Fitness = 1,600฿ (40%)
+
+## ⏸️ Membership Pausing Rules
+
+### Pause Limitations
+- **Maximum pause duration**: 90 days per pause
+- **Maximum pauses per membership**: 2 total pauses
+- **Non-pausable plans**: Visit-based plans (5-pass, 10-pass)
+- **Time-based plans only**: Monthly/yearly memberships can be paused
+
+### Pause Calculations
+- Original end date remains unchanged for reference
+- Current end date extends by pause duration
+- Accurate day calculation preserves exact remaining time
+- Pause history tracked with admin user attribution
 
 ## 🛡️ Security Features
 
