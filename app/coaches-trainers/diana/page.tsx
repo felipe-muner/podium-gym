@@ -21,18 +21,26 @@ export default function DianaPage() {
             About Diana
           </h2>
           <div className="mb-8">
+            <p className="text-gray-600 mb-4">
+              Since Diana needs to move to be happy, she started with athletics in a very young age. Her strength was the short track running (60m/100m). That lead to her first contacts with a barbell and heavier weights already with 14 years as accessories to become stronger and more resilient in her fast sprints. With the time the athletic competitions became less, but the love for the barbell and heavy weights remained. Over the years Diana focused on PowerLifting, Kettlebell Skills and Judo. Until Crossfit entered the stage. From day one she felt in love with the world of Functional Training. During a 2.5y battle against an aggressive cancer in 2012 – she used the sport and the community as medicine and to survive. Especially the mental part helped her so much that she decided to take the chance of a second life to change everything and become a coach. To help others to stay healthy and strong or regain mental and physical power during/after any personal situation. In 2017 she fulfilled her dream of her own Functional Training Gym in Switzerland which unfortunately she had to give up during Covid. That&apos;s, when she made it to Koh Phangan to relax and make a plan whats next. She got the offer to coach Crossfit on the island – and she still does. And much more.
+            </p>
+          </div>
+          <div className="mb-8">
+            <h3 className="mb-3 text-xl font-bold text-gray-900">
+              Certifications
+            </h3>
+            <ul className="list-disc list-inside text-gray-600 space-y-2">
+              <li>Diploma of Sports Science</li>
+              <li>Crossfit Trainer Certificate Level 1 and Level 2</li>
+              <li>Crossfit Trainer Certificate Weightlifting</li>
+              <li>Crossfit Trainer Certificate Gymnastics</li>
+            </ul>
+          </div>
+          <div className="mb-8">
             <h3 className="mb-3 text-xl font-bold text-gray-900">
               Languages
             </h3>
             <p className="text-gray-600">German, English</p>
-          </div>
-          <div className="mb-8">
-            <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Specialization
-            </h3>
-            <p className="text-gray-600">
-              CrossFit, Boot Camp training, strength and conditioning, and functional movement.
-            </p>
           </div>
           <div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">

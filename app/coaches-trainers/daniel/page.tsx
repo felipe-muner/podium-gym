@@ -21,18 +21,24 @@ export default function DanielPage() {
             About Daniel
           </h2>
           <div className="mb-8">
+            <p className="text-gray-600 mb-4">
+              Management, is a graduate of Wingate Institute of Sport, and is a certified Level 2 CrossFit Trainer. With over 8 years of hands-on coaching experience, Daniel has dedicated his career to guiding athletes of all levels, from complete beginners to seasoned competitors. His passion lies in creating a positive training environment where people feel challenged, supported, and motivated to push past their limits. &quot;Teaching CrossFit is my favorite thing to do. Every day I have the opportunity to introduce this sport to new people, helping them build healthy habits, stay consistent, and hopefully carry that strength with them for life.&quot; Daniel believes CrossFit is more than just fitness, it&apos;s a lifestyle that builds resilience, community, and long-lasting well-being.
+            </p>
+          </div>
+          <div className="mb-8">
+            <h3 className="mb-3 text-xl font-bold text-gray-900">
+              Certifications
+            </h3>
+            <ul className="list-disc list-inside text-gray-600 space-y-2">
+              <li>Graduate of Wingate Institute of Sport</li>
+              <li>Crossfit Trainer Certificate Level 2</li>
+            </ul>
+          </div>
+          <div className="mb-8">
             <h3 className="mb-3 text-xl font-bold text-gray-900">
               Languages
             </h3>
             <p className="text-gray-600">Hebrew, English</p>
-          </div>
-          <div className="mb-8">
-            <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Specialization
-            </h3>
-            <p className="text-gray-600">
-              CrossFit programming, Olympic lifting, and high-intensity functional training.
-            </p>
           </div>
           <div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">

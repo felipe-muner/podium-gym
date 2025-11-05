@@ -67,8 +67,9 @@ export default function CoachesTrainersPage() {
             {personalTrainers.map((trainer) => (
               <Link
                 key={trainer.name}
+                id={trainer.name.toLowerCase()}
                 href={trainer.href}
-                className="rounded-lg bg-white p-6 shadow-lg transition-transform hover:scale-105"
+                className="rounded-lg bg-white p-6 shadow-lg transition-transform hover:scale-105 scroll-mt-20"
               >
                 <h3 className="mb-2 text-xl font-bold text-gray-900">
                   {trainer.name}

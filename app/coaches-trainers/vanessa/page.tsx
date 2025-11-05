@@ -21,18 +21,24 @@ export default function VanessaPage() {
             About Vanessa
           </h2>
           <div className="mb-8">
+            <p className="text-gray-600 mb-4">
+              With a vast background in holistic bodywork, therapeutic massage, yoga, pilates and conscious living, Vanessa offers an in-depth understanding and intuitive sensitivity to the interconnected mechanisms of body and mind. With a great emphasis on alignment and functional movement, she guides to overall improved wellbeing and lifestyle awareness, specific to the needs of her clients. Her passion for movement and care for detail is a strong element of her classes, providing a sense of fulfilment on all levels.
+            </p>
+          </div>
+          <div className="mb-8">
+            <h3 className="mb-3 text-xl font-bold text-gray-900">
+              Certifications
+            </h3>
+            <ul className="list-disc list-inside text-gray-600 space-y-2">
+              <li>Foundation & Basic Mat Pilates by Conscious Movement Education - The Source Cape Town</li>
+              <li>Pilates Equipment / Reformer by Conscious Movement Education - The Source Cape Town</li>
+            </ul>
+          </div>
+          <div className="mb-8">
             <h3 className="mb-3 text-xl font-bold text-gray-900">
               Languages
             </h3>
             <p className="text-gray-600">English, Afrikaans</p>
-          </div>
-          <div className="mb-8">
-            <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Specialization
-            </h3>
-            <p className="text-gray-600">
-              Reformer Pilates, Pilates Mobility, core strength, and functional movement.
-            </p>
           </div>
           <div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">

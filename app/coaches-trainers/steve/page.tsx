@@ -21,18 +21,15 @@ export default function StevePage() {
             About Steve
           </h2>
           <div className="mb-8">
+            <p className="text-gray-600 mb-4">
+              Steve Carr, a British Citizen Award recipient and international mental health and wellbeing trainer, now based in Ko Phangan. Fitness has been a cornerstone of my recovery journey, from overcoming burnout and addiction to building resilience and strength. Movement isn&apos;t just exercise for me—it&apos;s medicine for the body and mind. That&apos;s what I bring into every class I lead. Steve delivers high-energy HIIT and Tabata sessions that are designed to push limits, build endurance, and leave people feeling stronger, fitter, and more alive. His classes blend discipline with encouragement, ensuring everyone—whether a beginner or experienced athlete—finds their edge while training safely.
+            </p>
+          </div>
+          <div className="mb-8">
             <h3 className="mb-3 text-xl font-bold text-gray-900">
               Languages
             </h3>
             <p className="text-gray-600">English</p>
-          </div>
-          <div className="mb-8">
-            <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Specialization
-            </h3>
-            <p className="text-gray-600">
-              HIIT, Tabata, high-intensity training, and cardiovascular conditioning.
-            </p>
           </div>
           <div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">

@@ -15,7 +15,7 @@ const NAV_ITEMS = [
     children: [
       { label: "Overview", href: "/the-club/overview" },
       { label: "Equipment", href: "/the-club/equipment" },
-      { label: "Calisthenics", href: "/the-club/calisthenics" },
+      { label: "Calisthenics — Coming soon", href: "/the-club/calisthenics" },
       { label: "Ice Bath & Steam Room", href: "/the-club/ice-bath-and-steam-room" },
       { label: "Protein Bar & Shop", href: "/the-club/protein-bar-and-shop" },
     ],
@@ -57,17 +57,17 @@ const NAV_ITEMS = [
     label: "🏃‍♀️ Fitness Classes",
     children: [
       { label: "Schedule", href: "/schedule#fitness-schedule" },
-      { label: "Pilates Mobility — Vanessa", href: "/coaches-trainers/vanessa" },
-      { label: "HIIT — Steve", href: "/coaches-trainers/steve" },
-      { label: "Boot Camp — Diana", href: "/coaches-trainers/diana" },
-      { label: "Tabata — Steve", href: "/coaches-trainers/steve" },
-      { label: "Primal Moves — Jace", href: "/coaches-trainers/jace" },
-      { label: "Maximum Mobility — Charlene", href: "/coaches-trainers/charlene" },
+      { label: "Pilates Mobility", href: "/classes/pilates-mobility" },
+      { label: "HIIT", href: "/classes/hiit" },
+      { label: "Boot Camp", href: "/classes/boot-camp" },
+      { label: "Tabata", href: "/classes/tabata" },
+      { label: "Primal Power Yoga", href: "/classes/primal-power-yoga" },
+      { label: "Maximum Mobility", href: "/classes/max-power-mobility" },
     ],
   },
   {
     href: "/brazilian-jiu-jitsu",
-    label: "🤼 Brazilian Jiu-Jitsu",
+    label: "🤼 Brazilian Jiu-Jitsu — Coming soon",
     children: [
       { label: "Schedule", href: "/schedule#bjj-schedule" },
       { label: "The Team", href: "#", children: [
@@ -77,7 +77,7 @@ const NAV_ITEMS = [
   },
   {
     href: "/pravilo",
-    label: "🪢 Právílo",
+    label: "🪢 Právílo — Coming soon",
     children: [
       { label: "Schedule", href: "/schedule#pravilo-schedule" },
       { label: "The Team", href: "#", children: [
@@ -95,14 +95,13 @@ const NAV_ITEMS = [
         { label: "Code — Gym 🇹🇭 Thai", href: "/coaches-trainers/code" },
         { label: "Daniel — CrossFit 🇮🇱 Hebrew / 🇬🇧 English", href: "/coaches-trainers/daniel" },
         { label: "Diana — Gym & CrossFit 🇩🇪 German / 🇬🇧 English", href: "/coaches-trainers/diana" },
-        { label: "Emil — Gym 🇵🇱 Polish", href: "/coaches-trainers/emil" },
         { label: "Eugene — Gym 🇷🇺 Russian", href: "/coaches-trainers/eugene" },
         { label: "Jamie — BJJ 🇬🇧 English", href: "/coaches-trainers/jamie" },
         { label: "Kate — CrossFit & Gym 🇹🇭 Thai / 🇬🇧 English", href: "/coaches-trainers/kate" },
         { label: "Micha — Právílo 🇷🇺 Russian", href: "/coaches-trainers/micha" },
-        { label: "Michal — Reformer Pilates 🇬🇧 English", href: "/coaches-trainers/michal" },
+        { label: "Michal — Reformer Pilates 🇮🇱 Hebrew / 🇬🇧 English", href: "/coaches-trainers/michal" },
         { label: "Namwan — Gym 🇹🇭 Thai / 🇬🇧 English", href: "/coaches-trainers/namwan" },
-        { label: "Vanessa — Reformer Pilates 🇬🇧 English / Afrikaans", href: "/coaches-trainers/vanessa" },
+        { label: "Vanessa — Pilates & Reformer Pilates 🇿🇦 English / Afrikaans", href: "/coaches-trainers/vanessa" },
       ]},
       { label: "👩‍🏫 Group Class Coaches", href: "#", children: [
         { label: "Reformer Pilates", href: "#", children: [
