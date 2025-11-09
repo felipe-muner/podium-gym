@@ -17,10 +17,50 @@ export default function ContactPage() {
       {/* Contact Information */}
       <section className="mx-auto max-w-4xl px-4 py-16">
         <div className="space-y-12">
+          {/* Reception — Memberships & General Enquiries */}
+          <div className="rounded-lg bg-white p-8 shadow-lg">
+            <h2 className="mb-4 text-2xl font-bold text-gray-900">
+              🧾 Reception — Memberships &amp; General Enquiries
+            </h2>
+            <p className="mb-6 text-gray-600">
+              For all enquiries regarding membership pauses, pricing, schedules, and general information:
+            </p>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <span className="text-lg">📧</span>
+                <a
+                  href="mailto:reception@podiumgym.com"
+                  className="text-brand-orange hover:underline"
+                >
+                  reception@podiumgym.com
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-lg">📱</span>
+                <span className="text-gray-700">WhatsApp:</span>
+                <a
+                  href="https://wa.me/66828454756"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-brand-orange hover:underline"
+                >
+                  +66 (0)82-845-4756
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="flex items-center justify-center">
+            <div className="h-px w-full bg-gray-300"></div>
+            <span className="px-4 text-gray-400">⸻</span>
+            <div className="h-px w-full bg-gray-300"></div>
+          </div>
+
           {/* CrossFit Classes & Content */}
           <div className="rounded-lg bg-white p-8 shadow-lg">
             <h2 className="mb-4 text-2xl font-bold text-gray-900">
-              💪 CrossFit Classes & Content
+              💪 CrossFit Classes &amp; Content
             </h2>
             <p className="mb-6 text-gray-600">
               For all questions about CrossFit programming, class content, and coaching:
@@ -28,7 +68,7 @@ export default function ContactPage() {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <span className="text-lg">📱</span>
-                <span className="text-gray-700">WhatsApp</span>
+                <span className="text-gray-700">WhatsApp:</span>
                 <a
                   href="https://wa.me/972546481186"
                   target="_blank"
@@ -40,14 +80,14 @@ export default function ContactPage() {
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-lg">📷</span>
-                <span className="text-gray-700">Instagram</span>
+                <span className="text-gray-700">Instagram:</span>
                 <a
-                  href="https://instagram.com/PodiumCrossFit"
+                  href="https://instagram.com/Podium.CrossFit"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-brand-orange hover:underline"
                 >
-                  @PodiumCrossFit
+                  @Podium.CrossFit
                 </a>
               </div>
             </div>
@@ -66,17 +106,24 @@ export default function ContactPage() {
               🥋 Brazilian Jiu-Jitsu (BJJ)
             </h2>
             <p className="mb-6 text-gray-600">
-              For everything BJJ (classes, schedule, memberships):
+              For everything related to BJJ classes, schedule, and memberships:
             </p>
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <span className="text-lg">📱</span>
-                <span className="text-gray-700">WhatsApp</span>
-                <span className="text-gray-500">+XX (insert number)</span>
+                <span className="text-gray-700">WhatsApp:</span>
+                <a
+                  href="https://wa.me/66994244784"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-brand-orange hover:underline"
+                >
+                  +66 (0)99 424 4784
+                </a>
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-lg">📷</span>
-                <span className="text-gray-700">Instagram</span>
+                <span className="text-gray-700">Instagram:</span>
                 <a
                   href="https://instagram.com/PodiumBJJ"
                   target="_blank"
@@ -96,13 +143,13 @@ export default function ContactPage() {
             <div className="h-px w-full bg-gray-300"></div>
           </div>
 
-          {/* All Other Enquiries */}
+          {/* Management — Specific Enquiries */}
           <div className="rounded-lg bg-white p-8 shadow-lg">
             <h2 className="mb-4 text-2xl font-bold text-gray-900">
-              💬 All Other Enquiries
+              💬 Management — Specific Enquiries
             </h2>
             <p className="mb-6 text-gray-600">
-              For all other enquiries — including job applications, complaints, and general requests:
+              For job applications or any specific enquiries:
             </p>
             <div className="flex items-center gap-3">
               <span className="text-lg">📧</span>
