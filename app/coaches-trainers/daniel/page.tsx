@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function DanielPage() {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -9,7 +11,7 @@ export default function DanielPage() {
             Daniel
           </h1>
           <p className="max-w-2xl text-xl text-gray-200">
-            CrossFit Coach & Personal Trainer
+            CrossFit / 1-on-1 PT for CrossFit
           </p>
         </div>
       </section>
@@ -20,12 +22,27 @@ export default function DanielPage() {
           <h2 className="mb-6 text-3xl font-bold text-gray-900">
             About Daniel
           </h2>
+
+          {/* Profile Image */}
+          <div className="mb-8 w-full">
+            <div className="relative w-full overflow-hidden rounded-lg">
+              <Image
+                src="/img/team/daniel.png"
+                alt="Daniel - CrossFit Coach"
+                width={1200}
+                height={800}
+                className="w-full h-auto object-contain"
+                priority
+              />
+            </div>
+          </div>
+
           <div className="mb-8">
             <h3 className="mb-3 text-xl font-bold text-gray-900">
               Bio
             </h3>
             <p className="mb-4 text-gray-600">
-              Management, is a graduate of Wingate Institute of Sport, and is a certified Level 2 CrossFit Trainer.
+              Co-Owner and Head Coach at CrossFit Podium, Daniel holds a B.A. in Business Management, is a graduate of Wingate Institute of Sport, and is a certified Level 2 CrossFit Trainer.
             </p>
             <p className="mb-4 text-gray-600">
               With over 8 years of hands-on coaching experience, Daniel has dedicated his career to guiding athletes of all levels, from complete beginners to seasoned competitors. His passion lies in creating a positive training environment where people feel challenged, supported, and motivated to push past their limits.
@@ -39,11 +56,10 @@ export default function DanielPage() {
           </div>
           <div className="mb-8">
             <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Education &amp; Certifications
+              Certification
             </h3>
             <ul className="list-inside list-disc space-y-2 text-gray-600">
-              <li>Graduate of Wingate Institute of Sport</li>
-              <li>Certified Level 2 CrossFit Trainer</li>
+              <li>CrossFit Level 2</li>
             </ul>
           </div>
           <div>
